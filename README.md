@@ -1,4 +1,4 @@
-# Submission 1: Nama Proyek Anda
+# Submission 1: Potential Suicidal Tweets Classification
 Nama: Nabila Kumala Gantari
 
 Username dicoding: nkumala16
