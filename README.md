@@ -1,0 +1,14 @@
+# Submission 1: Nama Proyek Anda
+Nama: Nabila Kumala Gantari
+
+Username dicoding: nkumala16
+
+| | Deskripsi |
+| ----------- | ----------- |
+| Dataset | [Suicidal Tweet Detection Dataset](https://www.kaggle.com/datasets/aunanya875/suicidal-tweet-detection-dataset) |
+| Masalah | Dewasa ini banyak orang yang mencurahkan isi hati dan permasalahan yang dihadapi melalui media sosial, salah satunya melalui postingan cuitan pada Twitter (sekarang X) yang sering disebut sebagai tweet. Tidak jarang bahwa tweet tentang curahan itu memiliki indikasi untuk mengakhiri hidup. Solusi Machine LEarning ini dibuat dengan tujuan untuk melakukan deteksi kondisi kesehatan mental lebih awal atas indikasi seseorang yang ingin mengakhiri hidupnya. |
+| Solusi machine learning | Melakukan analisis klasifikasi dengan mengkategorikan apakah sebuah tweet mengandung indikasi seseorang yang berpotensi memiliki pemikiran untuk bunuh diri (potential suicidal) atau tidak (not suicidal). |
+| Metode pengolahan | Analisis akan didasarkan pada kedua fitur yang ada pada dataset, 'Tweet' dan 'Suicide' yang telah diolah terlebih dahulu untuk encoding string yang ada pada fitur 'Suicide' menjadi integer dan menghapus baris yang memiliki null value pada salah satu fitur atau keduanya. Setelah itu, dilakukan splitting dataset untuk keperluan training dan evaluation dengan rasio 8:2 dan mengubah data pada fitur 'Tweet' menjadi lowercase. |
+| Arsitektur model | Arsitektur model menggunakan Embedding model dengan library Tensorflow terhadap dataset yang telah diverktorisasi menggunakan vectorization_layer(). Pada model Embedding ini terdapat satu layer GlobalAveragePooling1D. Hal tersebut dikarenakan dataset yang memiliki fitur Tweet dengan data teks. Kemudian, terdapat dua Dense layers dengan jumlah unit masing-masing 64 dan 32, serta menggunakan activation 'relu'. Terakhir, terdapat Dense layer dengan jumlah unit 1 dan fungsi activation 'sigmoid' untuk mengkategorikan teks pada kedua kategori yang ada pada fitur 'Suicide'. Model tersebut kemudian di-compile dengan fungsi loss 'binary_crossentropy' dan metriks 'BinaryAccuracy()' menyesuaikan jumlah kategori yang ada, dan dioptimasi dengan Adam optimizer. |
+| Metrik evaluasi | Metrik evaluasi yang digunakan adalah ExampleCount, AUC, FalsePositives, TruePositives, FalseNegatives, TrueNegatives, dan BinaryAccuracy. |
+| Performa model | Performa model berdasarkan hasil evaluasi menunjukkan nilai ExampleCount sebesar 316, AUC overall sebesar 95.9%, BinaryAccuracy sebesar 88.9%, loss sebesar 0.316, FalseNegatives dan FalsePosictives masing-masing sebesar 20  dan 15, serta TrueNegatives dan TruePositives masing-masing sebesar 189 dan 92. Secara garis besar, performa model sudah cukup baik, terbukti dengan besarnya akurasi yang hampir mencapai 90% dan loss dengan nilai 0.3. Namun, hal tersebut dapat ditingkatkan kembali supaya hasil predisksi menjadi lebih akurat untuk tweet yang bersifat ambigu. |
